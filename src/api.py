@@ -36,5 +36,21 @@ def add_task():
         return 'Failed in adding task', 500
 
 
+@app.route('/add_photo')
+def add_task():
+    try:
+        task = request.args.get('title')
+        url = request.args.get('url')
+
+        collection = tasksDatabase().collection
+        row = collection.add_row()
+        row.name = task
+        row.status = 'Inbox'
+        row.photo = url
+
+        return 'Succeceed in adding task', 200
+    except Exception:
+        return 'Failed in adding task', 500
+
 if __name__ == '__main__':
     app.run()
