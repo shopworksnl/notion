@@ -1,6 +1,6 @@
 #!/usr/bin/env -S PATH="${PATH}:/usr/local/bin" python3
 
-from notion_api import appendToCurrentDayNotes, tasksDatabase
+from notion_api import appendToCurrentDayNotes, tasksDatabase, photoDatabase
 from config import importedTagURL
 
 from flask import Flask, request
