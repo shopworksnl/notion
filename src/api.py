@@ -23,12 +23,13 @@ def add_note():
 def add_task():
     try:
         task = request.args.get('title')
+        url = request.args.get('url')
 
         collection = tasksDatabase().collection
         row = collection.add_row()
         row.name = task
-        row.status = 'Next Up'
-        row.tags = [importedTagURL()]
+        row.status = 'Inbox'
+        row.url = url
 
         return 'Succeceed in adding task', 200
     except Exception:
