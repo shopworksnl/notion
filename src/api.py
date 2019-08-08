@@ -52,5 +52,21 @@ def add_photo():
     except Exception:
         return 'Failed in adding photo', 500
 
+
+@app.route('/add_photojournal')
+def add_photojournal():
+    try:
+        task = request.args.get('title')
+        url = request.args.get('url')
+
+        collection = photoDatabaseURL().collection
+        row = collection.add_row()
+        row.name = task
+        row.photo = url
+
+        return 'Succeceed in adding photo', 200
+    except Exception:
+        return 'Failed in adding photo', 500
+
 if __name__ == '__main__':
     app.run()

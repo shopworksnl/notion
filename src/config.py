@@ -13,6 +13,9 @@ def notionToken():
 def tasksDatabaseURL():
     return os.environ.get('TASKS_DATABASE_URL')
 
+@cached(cache={})
+def photoDatabaseURL():
+    return os.environ.get('PHOTO_DATABASE_URL')
 
 @cached(cache={})
 def yearPageURL():
