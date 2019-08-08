@@ -9,7 +9,7 @@ from datetime import datetime
 from notion.client import NotionClient
 from notion.block import DividerBlock, TextBlock
 
-from config import notionToken, tasksDatabaseURL, yearPageURL
+from config import notionToken, tasksDatabaseURL, yearPageURL, photoDatabaseURL
 
 
 @cached(cache={})
