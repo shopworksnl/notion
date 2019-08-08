@@ -21,6 +21,9 @@ def client():
 def tasksDatabase():
     return client().get_collection_view(tasksDatabaseURL())
 
+@cached(cache={})
+def photoDatabase():
+    return client().get_collection_view(photoDatabaseURL())
 
 @cached(cache={})
 def currentYear():

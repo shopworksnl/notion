@@ -59,7 +59,7 @@ def add_photojournal():
         task = request.args.get('title')
         url = request.args.get('url')
 
-        collection = photoDatabaseURL().collection
+        collection = photoDatabase().collection
         row = collection.add_row()
         row.name = task
         row.photo = url
