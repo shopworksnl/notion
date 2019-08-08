@@ -37,7 +37,7 @@ def add_task():
 
 
 @app.route('/add_photo')
-def add_task():
+def add_photo():
     try:
         task = request.args.get('title')
         url = request.args.get('url')
@@ -48,9 +48,9 @@ def add_task():
         row.status = 'Inbox'
         row.photo = url
 
-        return 'Succeceed in adding task', 200
+        return 'Succeceed in adding photo', 200
     except Exception:
-        return 'Failed in adding task', 500
+        return 'Failed in adding photo', 500
 
 if __name__ == '__main__':
     app.run()
