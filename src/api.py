@@ -6,6 +6,26 @@ from config import importedTagURL
 from flask import Flask, request
 app = Flask(__name__)
 
+class Config(object):
+    JOBS = [
+        {
+            'id': 'add_task_transitions',
+            'func': 'update_task_transitions:add_task_transitions',
+            'args': (),
+            'trigger': 'interval',
+            'seconds': 60
+        },
+        {
+            'id': 'ping',
+            'func': 'keep_awake:ping',
+            'args': (),
+            'trigger': 'interval',
+            'seconds': 600
+        }
+    ]
+
+    SCHEDULER_API_ENABLED = True
+
 
 @app.route('/add_note')
 def add_note():
