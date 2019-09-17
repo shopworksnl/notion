@@ -52,6 +52,9 @@ def add_task():
         row.name = task
         row.status = 'Inbox'
         row.url = url
+        
+        row.add_new(TextBlock, title="asdasdasdjkhasdkha sdkhas djkhas dkjahs dkasjhd")
+
 
         return 'Succeceed in adding task', 200
     except Exception:
