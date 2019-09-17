@@ -1,6 +1,7 @@
 #!/usr/bin/env -S PATH="${PATH}:/usr/local/bin" python3
 
 # Heavily borrowed from https://github.com/kevinjalbert/alfred-notion/blob/v1.0.0/src/notion_api.py
+# https://github.com/kevinjalbert/notion-heroku
 # TODO: Would be nice to replace this and the source material with a common package
 
 from cachetools import cached
@@ -11,6 +12,7 @@ from notion.block import DividerBlock, TextBlock
 
 from config import notionToken, tasksDatabaseURL, yearPageURL, photoDatabaseURL
 
+import disable_cache  # noqa: F401
 
 @cached(cache={})
 def client():

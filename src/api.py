@@ -4,7 +4,9 @@ from notion_api import appendToCurrentDayNotes, tasksDatabase, photoDatabase
 from config import importedTagURL
 
 from flask import Flask, request
+from flask_apscheduler import APScheduler
 app = Flask(__name__)
+
 
 class Config(object):
     JOBS = [
@@ -90,3 +92,9 @@ def add_photojournal():
 
 if __name__ == '__main__':
     app.run()
+
+app.config.from_object(Config())
+
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.start()
