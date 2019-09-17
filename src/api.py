@@ -52,7 +52,7 @@ def add_task():
         return 'Failed in adding task', 500
 
 @app.route('/add_email')
-def add_task():
+def add_email():
     try:
         task = request.args.get('title')
         url = request.args.get('url')
