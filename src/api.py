@@ -68,10 +68,10 @@ def add_task():
         
         row.children.add_new(TextBlock, title=intro)
 
-
         return 'Succeceed in adding task', 200
     except Exception:
         return 'Failed in adding task', 500
+
 
 @app.route('/add_photo')
 def add_photo():
