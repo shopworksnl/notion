@@ -3,8 +3,6 @@
 from notion_api import appendToCurrentDayNotes, tasksDatabase, photoDatabase
 from config import importedTagURL
 
-from notion.block import DividerBlock, TextBlock
-
 from flask import Flask, request
 from flask_apscheduler import APScheduler
 app = Flask(__name__)
