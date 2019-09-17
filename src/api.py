@@ -11,13 +11,6 @@ app = Flask(__name__)
 class Config(object):
     JOBS = [
         {
-            'id': 'add_task_transitions',
-            'func': 'update_task_transitions:add_task_transitions',
-            'args': (),
-            'trigger': 'interval',
-            'seconds': 60
-        },
-        {
             'id': 'ping',
             'func': 'keep_awake:ping',
             'args': (),
