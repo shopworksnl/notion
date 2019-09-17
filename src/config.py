@@ -12,6 +12,7 @@ def notionToken():
 @cached(cache={})
 def tasksDatabaseURL():
     return os.environ.get('TASKS_DATABASE_URL')
+    
 
 @cached(cache={})
 def photoDatabaseURL():

@@ -47,14 +47,31 @@ def add_task():
         row.name = task
         row.status = 'Inbox'
         row.url = url
-        
-        row.children.add_new(TextBlock, title="asdasdasdjkhasdkha sdkhas djkhas dkjahs dkasjhd")
 
 
         return 'Succeceed in adding task', 200
     except Exception:
         return 'Failed in adding task', 500
 
+@app.route('/add_email')
+def add_task():
+    try:
+        task = request.args.get('title')
+        url = request.args.get('url')
+        intro = request.args.get('intro')
+
+        collection = tasksDatabase().collection
+        row = collection.add_row()
+        row.name = task
+        row.status = 'Inbox'
+        row.url = url
+        
+        row.children.add_new(TextBlock, title=intro)
+
+
+        return 'Succeceed in adding task', 200
+    except Exception:
+        return 'Failed in adding task', 500
 
 @app.route('/add_photo')
 def add_photo():
