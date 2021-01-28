@@ -8,12 +8,10 @@ from cachetools import cached
 def notionToken():
     return os.environ.get('NOTION_TOKEN')
 
-
 @cached(cache={})
 def tasksDatabaseURL():
     return os.environ.get('TASKS_DATABASE_URL')
     
-
 @cached(cache={})
 def photoDatabaseURL():
     return os.environ.get('PHOTO_DATABASE_URL')
